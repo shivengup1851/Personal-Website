@@ -1,63 +1,29 @@
-/*global $*/
 
 $(function () {
     
     "use strict";
-    
-/*==================================
-    * Author        : Ideas_Factory
-    * Template Name : Karizma - Modern vCard / Resume / CV / Portfolio
-==================================== */
-    
-/*=========== TABLE OF CONTENTS ===========
-
-    01. Preloader
-    02. Isotope Plugin
-    03. Functions 
-    04. Menu
-    05. responsiveSlides plugin
-    06. Form Validation
-    07. Window Resize
-    08. MagnifPopup Plugin
-    09. Type Plugin
-    10. fitText plugin
-    11. Slick plugin
-    12. Jquery.matchHeight Plugin
-    13. Jquery.pogo-slider Plugin
-    14. Jquery.mb.YTPlayer Plugin
-
-======================================*/
 
     var $grid = $('.grid');
 
     $(window).on('load', function () {
         
-        /*--------------------------------
-            01. Preloader
-        ----------------------------------*/
         $('.startLoad').fadeOut('slow');
 
-
-        /*--------------------------------
-            02. Isotope Plugin
-        ----------------------------------*/
         if ( $grid.length ) {
 
             $grid.isotope({
-              // options...
                 itemSelector: '.grid .item',
+
                 percentPosition: true,
+
                 masonry: {
-                    // use element for option
                     columnWidth: '.grid-sizer'
                 }
             });
 
         }
         
-    });//--- window(load) ---//
-
-    //-- filter items on button click --//
+    });
     $('.ul-filter li').on('click', function () {
 
         var filterValue = $(this).attr('data-filter');
@@ -68,9 +34,6 @@ $(function () {
 
     });
 
-    /*--------------------------------
-        03. Functions 
-    ----------------------------------*/
     var intro       = '.intro',
         page_right  = '.page-right',
         body        = 'body',
@@ -154,9 +117,6 @@ $(function () {
 
     }
 
-    /*--------------------------------
-        04. Menu
-    ----------------------------------*/
     $('.mob-menu .navbar-toggle,.mob-menu-overlay').on('click', function (){
 
         mob_menu_toggle();
@@ -262,9 +222,6 @@ $(function () {
 
      });
 
-    /*----------------------------------------
-        05. responsiveSlides plugin
-    ------------------------------------------*/ 
     var project_slider = '.project-slider';
 
     if ( $(project_slider).length ) {
@@ -277,9 +234,6 @@ $(function () {
 
     }
 
-    /*--------------------------------
-        06. Form Validation
-    ----------------------------------*/
     $('.contact form .submit').on('click', function () {
 
         $('.contact form .form-control').removeClass("errorForm");
@@ -338,9 +292,6 @@ $(function () {
         
     });
 
-    /*--------------------------------
-        07. Window Resize
-    ----------------------------------*/
     $(window).on("resize", function () {
 
         sectionCenter();
@@ -360,9 +311,6 @@ $(function () {
 
     });
 
-    /*--------------------------------
-        08. MagnifPopup Plugin
-    ----------------------------------*/
     var my_img = '.my_img',
         magnifPopup = function () {
 
@@ -385,7 +333,7 @@ $(function () {
         });
 
     };
-    // Call the functions 
+
     if( $(my_img).length ){
 
         magnifPopup();
@@ -416,9 +364,6 @@ $(function () {
         type: 'iframe'
     });
 
-    /*--------------------------------
-        09. Type Plugin
-    ----------------------------------*/
     var type_d = "#typed";
 
     if ( $(type_d).length ){
@@ -435,9 +380,6 @@ $(function () {
 
     }
 
-    /*----------------------------------------------
-        10. fitText plugin
-    -----------------------------------------------*/
     function fitMyText(){
 
         var fit__text = $(".fit__text");
@@ -451,9 +393,6 @@ $(function () {
     }
     fitMyText();
 
-    /*--------------------------------
-        11. Slick plugin
-    ----------------------------------*/ 
     var owl_slick = '.owl';
     $(owl_slick).slick({
         infinite: false,
@@ -484,14 +423,8 @@ $(function () {
 
     });
 
-    /*--------------------------------
-        12. Jquery.matchHeight Plugin
-    ----------------------------------*/
     $(".matchH").matchHeight();
 
-    /*--------------------------------
-        13. Jquery.pogo-slider Plugin
-    ----------------------------------*/
     var pogoSlider = ".pogoSlider";
     if ($(pogoSlider).length) {
         $(pogoSlider).pogoSlider({
@@ -505,9 +438,6 @@ $(function () {
         }).data('plugin_pogoSlider');
     }
 
-    /*--------------------------------
-        14. Jquery.mb.YTPlayer Plugin
-    ----------------------------------*/ 
     if ($("#bgndVideo").length){
 
         jQuery("#bgndVideo").YTPlayer({
